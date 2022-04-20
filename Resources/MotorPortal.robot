@@ -13,9 +13,9 @@ Happy Path
     [Arguments]    ${address}    ${registrationNumber}    ${registered}    ${recentlyBought}    ${damaged}    ${mileage}    ${vehicleUsage}
     ...    ${finance}    ${businessUsage}    ${financialInstitution}    ${dateOfBirth}    ${gender}    ${licenseHeld}    ${demeritPoints}
     ...    ${claims}    ${suspended}    ${convicted}    ${fraud}
-    run keyword and ignore error  pageloader.wait for page loader
+    BuiltIn.Run Keyword And Ignore Error  pageloader.wait for page loader
     welcomepage.click continue button
-    run keyword and ignore error  pageloader.wait for page loader
+    BuiltIn.Run Keyword And Ignore Error  pageloader.wait for page loader
     MyVehiclePage.Enter a valid address    ${address}
     MyVehiclePage.Enter a valid registration number    ${registrationNumber}
     myvehiclepage.click next button
