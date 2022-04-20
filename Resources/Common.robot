@@ -7,7 +7,7 @@ Library    SeleniumLibrary
 ${ENVIRONMENT}    prod
 &{URL}    prod=https://www.qbe.com/au/portal/quote/vehicle?promotionalCode=SAVE75#/welcome    badcampaign=https://www.qbe.com/au/portal/quote/vehicle?promotionalCode=SAVE765#/welcome
 ${BROWSER}    chrome
-&{BROWSERS}    chrome=gc    firefox=ff
+&{BROWSERS}    chrome=gc    firefox=ff    edge=edge
 
 *** Keywords ***
 Start Testing
