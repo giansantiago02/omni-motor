@@ -6,6 +6,7 @@ Resource    ./Page Objects/ConfirmVehiclePage.robot
 Resource    ./Page Objects/VehicleUsagePage.robot
 Resource    ./Page Objects/MainDriverPage.robot
 Resource    ./Page Objects/PageLoader.robot
+Resource    ./Page Objects/DriversPage.robot
 
 
 *** Keywords ***
@@ -13,9 +14,9 @@ Happy Path
     [Arguments]    ${address}    ${registrationNumber}    ${registered}    ${recentlyBought}    ${damaged}    ${mileage}    ${vehicleUsage}
     ...    ${finance}    ${businessUsage}    ${financialInstitution}    ${dateOfBirth}    ${gender}    ${licenseHeld}    ${demeritPoints}
     ...    ${claims}    ${suspended}    ${convicted}    ${fraud}
-    BuiltIn.Run Keyword And Ignore Error  pageloader.wait for page loader
+    Run Keyword And Ignore Error  pageloader.wait for page loader
     welcomepage.click continue button
-    BuiltIn.Run Keyword And Ignore Error  pageloader.wait for page loader
+    Run Keyword And Ignore Error  pageloader.wait for page loader
     MyVehiclePage.Enter a valid address    ${address}
     MyVehiclePage.Enter a valid registration number    ${registrationNumber}
     myvehiclepage.click next button
@@ -37,3 +38,5 @@ Happy Path
     MainDriverPage.Answer conviction question    ${convicted}
     maindriverpage.answer fraud question    ${fraud}
     MainDriverPage.Click next button
+    DriversPage.Verify Main Driver page
+    DriversPage.Click next button
